@@ -1,5 +1,3 @@
-CREATE DATABASE resturantdb;
-
 CREATE TABLE units(
   id SERIAL PRIMARY KEY,
   name VARCHAR(20)
