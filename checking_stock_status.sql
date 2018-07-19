@@ -20,12 +20,12 @@ CREATE OR REPLACE FUNCTION calculate_days_expiry_from_today(days_to_expiry INTEG
   $BODY$
 
   BEGIN
-    RETURN MAKE_INTERVAL(days := CEIL((days_to_expiry - get_interval_in_days(AGE(CURRENT_DATE, shimpent_date)))) :: INTEGER);
+    RETURN MAKE_INTERVAL(days := CEIL((days_to_expiry - get_interval_in_days_number(AGE(CURRENT_DATE, shimpent_date)))) :: INTEGER);
   END
 $BODY$
 LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION get_interval_in_days(interval_between_today_and_shipment INTERVAL) RETURNS DOUBLE PRECISION AS
+CREATE OR REPLACE FUNCTION get_interval_in_days_number(interval_between_today_and_shipment INTERVAL) RETURNS DOUBLE PRECISION AS
 $BODY$
   DECLARE
     seconds_in_hour INTEGER := 3600;
