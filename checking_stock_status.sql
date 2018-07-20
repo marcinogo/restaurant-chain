@@ -40,4 +40,3 @@ SELECT checking_stock_status('Olleros');
 
 -- Test for method
 -- SELECT calculate_days_expiry_from_today(2, '2018-07-19');
-
